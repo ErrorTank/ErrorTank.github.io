@@ -1,0 +1,205 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>SimpCal</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="deco.css"/>
+	<link rel="icon" type="image/png" href="icon.png"/>
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Indie+Flower|Lobster" rel="stylesheet">
+	
+</head>
+<body>
+	<div id="menu1-contain">
+		<div id="menu1">
+			<a href="intro.html" target="_self" style="margin:0;padding:0;" title="Home"><img src="dinosaur.png" id="no1" style="height:60px; margin-left:5px; margin-right:5px;margin-top:4px;"/>
+			<p id="main-name">iKappa</p></a>
+			<div id="menu-logo">
+					<img src="menu.png" title="Menu" style="height:45px;transition:all 0.5s ease"/>
+					<div id="drop-contain">
+						<div id="drop">
+							<a href="music.html">Music <b>&#187</b></a>
+							<a href="video.html">Gameplay <b>&#187</b></a>
+							<a href="game.html">Game <b>&#187</b></a>
+							<a href="about.html">About <b>&#187</b></a>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	<div id="cal-fade">
+	</div>
+	<div id="cal-title">
+		<h1>Simple Calculator</h1>
+	</div>
+	<div id="container">
+		<div id="calculator">
+			<button onclick="display(this)">+</button>
+			<button onclick="display(this)">-</button>
+			<button onclick="display(this)">*</button>
+			<button onclick="display(this)">/</button>
+			<button onclick="display(this)">%</button>
+			<button onclick="reset()">Clear</button>
+			<button onclick="display(this)">0</button>
+			<button onclick="display(this)">1</button>
+			<button onclick="display(this)">2</button>
+			<button onclick="display(this)">3</button>
+			<button onclick="display(this)">4</button>
+			<button onclick="display(this)">5</button>
+			<button onclick="display(this)">6</button>
+			<button onclick="display(this)">7</button>
+			<button onclick="display(this)">8</button>
+			<button onclick="display(this)">9</button>
+			<button onclick="display(this)">.</button>
+			<button onclick="display(this)">^2</button>
+			<button onclick="display(this)">^3</button>
+			<button onclick="display(this)">c2</button>
+			<button onclick="display(this)">!</button>
+			<button onclick="exe()">=</button>
+			<button onclick="display(this)">(</button>
+			<button onclick="display(this)">)</button>
+		</div>
+		<div class="display" id="d1">
+			<h1 id="eval">Eval</h1>
+			<h1 id="eval-content"></h1>
+		</div>
+		<div class="display" id="d2">
+			<h1 id="result">Result</h1>
+			<h1 id="result-content"></h1>
+		</div>
+		<button onclick="delOne()" id="bs"><- Back</button>
+	</div>
+	<script>
+		function display(button){
+			var x=document.getElementById("eval-content");
+			var t=x.innerHTML;
+			t+=button.innerHTML;
+			x.innerHTML=t;
+		}
+		function reset(){
+			var x=document.getElementById("eval-content");
+			x.innerHTML="";
+			var y=document.getElementById("result-content");
+			y.innerHTML="";
+		}
+	</script>
+	<script>
+		function convert(str,pos){
+			var c=0;
+			var l=0,r=0;
+			if(str[pos-1]==")"){
+				for(var j=pos-1;j>=0;j--)
+				{
+					c++;
+					if(str[j]==")")
+						r++;
+					if(str[j]=="(")
+						l++;
+					if(l==r)
+						break;
+				}
+				return c;
+			}
+			else
+			{
+				for(var i=pos-1;i>=0;i--)
+				{
+					if((str.charCodeAt(i)>=48 && str.charCodeAt(i)<=57) || str[i]==".")
+					{
+						c++;
+					}
+					else
+					{
+						break;
+					}
+				}
+				return c;
+			}
+		}
+	</script>
+	<script>
+		function byeZero(str){
+			for(var i=0;i<str.length;i++){
+
+			}
+		}
+	</script>
+	<script>
+		function gt(x){
+			var te=x;
+			te=te.replace("!","");
+			te=eval(te);
+			var t=1;
+			for(var i=1;i<=te;i++)
+				t*=i;
+			return t;
+		}
+	</script>
+	<script>
+		function exe(){
+			var x=document.getElementById("eval-content").innerHTML;
+			for(var i=0;i<x.length;i++)
+			{		
+				if(x.slice(i,i+2)=="^2")
+				{
+					var temp=i;
+					var tinh=x.slice(temp-convert(x,temp),temp);
+					var t=x.slice(temp-convert(x,temp),temp+2);
+					x=x.replace(t,eval(tinh+"*"+tinh));
+					i=-1;
+					continue;
+				}
+				if(x.slice(i,i+2)=="^3")
+				{	
+					var temp=i;
+					var tinh=x.slice(temp-convert(x,temp),temp);
+					var t=x.slice(temp-convert(x,temp),temp+2);
+					x=x.replace(t,eval(tinh+"*"+tinh+"*"+tinh));
+					i=-1;
+					continue;
+				}
+				if(x[i]=="!")
+				{	
+					var temp=x.indexOf("!");
+					var t=x.slice(temp-convert(x,temp),temp+1);
+					x=x.replace(t,gt(t));
+					i=-1;
+					continue;
+				}
+				if(x.slice(i,i+2)=="c2")
+				{
+					var temp=i;
+					var tinh=x.slice(temp-convert(x,temp),temp);
+					var t=x.slice(temp-convert(x,temp),temp+2);
+					x=x.replace(t,Math.sqrt(eval(tinh)).toFixed(2));
+					i=-1;
+					continue;
+				}
+			}
+				var result=document.getElementById("result-content");
+				var test=0;
+				try{
+					eval(x);
+				}
+				catch(err){
+					result.innerHTML=("Syntax Error!");
+					test=1;
+				}
+				if(test==0 && typeof eval(x)==="number")
+					result.innerHTML=eval(x);
+				else
+					result.innerHTML=("Syntax Error!");
+
+
+		}
+	</script>
+	<script>
+		function delOne(){
+			var x=document.getElementById("eval-content");
+			t=x.innerHTML;
+			t=t.slice(0,t.length-1);
+			x.innerHTML=t;
+		}
+	</script>
+</body>
+</html>

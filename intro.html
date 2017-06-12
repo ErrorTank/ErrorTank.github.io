@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>iKappa</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="deco.css"/>
+	<link rel="icon" type="image/png" href="icon.png"/>
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Indie+Flower|Lobster" rel="stylesheet">
+</head>
+<body>
+	<div id="menu1-contain">
+		<form action="http://www.google.com/search?hl=en-GB&source=hp&q=" method="get" autocomplete>
+			<label><input type="text" name="q" placeholder="GG Search"></label>
+			<button type="submit">Search</button>
+		</form>
+		<div id="menu1">
+			<a href="intro.html" target="_self" style="margin:0;padding:0;" title="Home"><img src="dinosaur.png" id="no1" style="height:60px; margin-left:5px; margin-right:5px;margin-top:4px;"/>
+			<p id="main-name">iKappa</p></a>
+			<div id="menu-logo">
+					<img src="menu.png" title="Menu" style="height:45px;transition:all 0.5s ease"/>
+					<div id="drop-contain">
+						<div id="drop">
+							<a href="#no1">Musics <b>&#187</b></a>
+							<a href="#no2">Videos <b>&#187</b></a>
+							<a href="#no3">Game <b>&#187</b></a>
+							<a href="#no4">About <b>&#187</b></a>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	<div id="main">
+		<div id="drop-letter">
+			<div id="faded">
+			</div>
+			<div id="unfaded">
+				<div>
+					<div id="title">
+						<h1>
+							Try Sth<br/><span style="font-size:120px">Cool!</span>
+						</h1>
+					</div>
+					<div id="option">
+						<a target="_blank" href="cal.html" title="Calculator" id="sc">Calculator</a>
+						<div id="explain"><h1>
+							<ul>
+								<li>Simple calculator with basic easy calculation</li>
+								<li>Some special operation must be come after two round quote!</li>
+							</ul>
+						<h1></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="ct">
+		</div>
+		<div id="content">
+			<div id="wrap">
+				<h1 class="name" id="name1">Music</h1>
+				<div id="no1">
+					<img src="edm.jpg" title="Awesome Music" alt="Awesome Music"/>
+					<div><div class="text">Awesome Music</div></div>
+					<h1 class="ds">
+						<ul>
+							<li>EDM</li>
+							<li>Acoustic EDM</li>
+							<li>House</li>
+							<li><a href="music.html">Find out!<div><p>Find out!</p></div></a></li>
+						</ul>
+					</h1>
+				</div>
+				<h1 class="name" id="name2">Video</h1>
+				<div id="no2">
+					<img src="tt.jpg" title="Tutorials" alt="Tutorials"/>
+					<div><div class="text">Video</div></div>
+					<h1 class="ds">
+						<ul>
+							<li>League Montage</li>
+							<li>Tech Tips</li>
+							<li>Prank Complication</li>
+							<li><a href="video.html">Find out!<div><p>Find out!</p></div></a></li>
+						</ul>
+					</h1>
+				</div>
+				<h1 class="name" id="name3">Game</h1>
+				<div id="no3">
+					<img src="game.jpg" title="Memory Card" alt="Memory Card"/>
+					<div><div class="text">Game</div></div>
+					<h1 class="ds">
+						<ul>
+							<li>Memory Card</li>
+							<li>Quick Quiz</li>
+							<li></li>
+							<li><a href="game.html">Find out!<div><p>Find out!</p></div></a></li>
+						</ul>
+					</h1>
+				</div>
+				<h1 class="name" id="name4">About</h1>
+				<div id="no4">
+					<img src="about.jpg" title="About Project" alt="About Project"/>
+					<div><div class="text">About Project</div></div>
+					<h1 class="ds">
+						<ul>
+							<li>Participants</li>
+							<li>Project Info</li>
+							<li></li>
+							<li><a href="about.html">Find out!<div><p>Find out!</p></div></a></li>
+						</ul>
+					</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="img-wrap">
+		<button onclick="backward()"><img src="01.png"/></button>
+		<button onclick="forward()"><img src="02.png"/></button>
+		<div>Lorem Ipsum</div>
+		<div id="slide">
+			<img src="f1.jpg" class="slide-show"/>
+			<img src="f2.jpg" class="slide-show"/>
+			<img src="f3.jpg" class="slide-show"/>
+			<img src="f4.jpg" class="slide-show"/>
+		</div>
+	</div>
+	<script>
+		var x=document.getElementById("sc");
+		var y=document.getElementById("explain");
+		x.addEventListener("mouseover",function(){
+			y.style.transform="scale(1)";
+			y.style.opacity="1";
+		});
+		y.addEventListener("mouseover",function(){
+			y.style.transform="scale(1)";
+			y.style.opacity="1";
+		});
+		x.addEventListener("mouseout",function(){
+			y.style.transform="scale(0)";
+			y.style.opacity="0";
+		});
+		y.addEventListener("mouseout",function(){
+			y.style.transform="scale(0)";
+			y.style.opacity="0";
+		});
+	</script>
+	<script>
+		var arr=document.getElementsByClassName("slide-show");
+		var apear=0;
+		doIt();
+		function doIt(){
+			for(var i=0;i<arr.length;i++)
+			{
+				arr[i].style.display="none";
+			}
+			arr[apear].style.display="block";
+			apear++;
+			if(apear==arr.length)
+				apear=0;
+			setTimeout(doIt,4000);
+		}
+	</script>
+	<script>
+		var t=document.getElementById("menu-logo");
+		var n=window.innerWidth;
+		n=n-70;
+		n=n+"px";
+		n="translate("+n+")";
+		t.style.transform=n;
+	</script>
+</body>
+</html>
