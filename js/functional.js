@@ -5,7 +5,7 @@ $(document).ready(function(){
 		});
 	});
 	$(window).click(function(event){
-		if(event.target===$("#email-confirm"))
+		if(event.target.id=='email-confirm')
 		{
 			$("#ec-wrap").addClass("falldown").delay(500).fadeTo(500,0,function(){
 				$("#email-confirm").remove();
