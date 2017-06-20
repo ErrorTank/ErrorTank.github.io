@@ -2,16 +2,14 @@
 	box-sizing:border-box;
 	z-index: 0;
 }
-html{
-	width:100%;
-	height:100%;
-}
+
 body{
-	width:100%;
-	height:100%;
+	width: 100vw;
 	margin:0;
-	overflow: hidden;
+	height: 1200px;
 	padding:0;
+	overflow-x: hidden;
+	background-color: orangered;
 }
 #email-confirm{
 	position:fixed;
@@ -20,6 +18,7 @@ body{
 	background-color:rgba(255, 255, 255,0.5);
 	padding-top:20vh;
 	overflow: auto;
+	z-index: 2;
 }
 #ec-wrap{
 	width:70vw;
@@ -180,4 +179,326 @@ body{
 	100%{
 		transform: scale(1);
 	}
+}
+#main-menu{
+	position:relative;
+	width: 100%;
+	height: 130px;
+	background-color: white;
+	z-index: 0;
+}
+#shop-name{
+	width:250px;
+	height:120px;
+	font-family:  'Ubuntu', sans-serif;
+	font-size: 50px;
+	vertical-align:super;
+	margin-left: 100px;
+	padding-top:20px;
+	letter-spacing: 5px;
+	font-weight: bold;
+}
+#shop-name a{
+	text-decoration: none;
+	color: black;
+}
+#shop-name p{
+	margin:0;
+	padding:0;
+	width: 220px;
+	font-size:35px;
+	text-align: right;
+}
+#shop-name img{
+	vertical-align: sub;
+	padding-right:6px;
+}
+#main-menu form{
+	position: absolute;
+	top:40px;
+	display: flex;
+
+}
+#main-menu input[type=text]{
+	font-size:20px;
+	margin-left:800px;
+	padding: 12px;
+	transition:all 0.5s ease;
+	border:none;
+	font-style: oblique;
+	width: 250px;
+	background-color: #edebea;
+}
+#main-menu input[type=text]:focus{
+	width: 500px
+}
+#main-menu form button{
+	border:none;
+	background-color: #edebea;
+	width:80px;
+	padding-top: 7px;
+	cursor: pointer;
+	transition: all 0.5s ease;
+	text-align: center;
+}
+#main-menu form button:hover{
+	background-color: orangered;
+}
+#main-menu form button:hover img{
+	transform: scale(1.2);
+}
+#main-menu form button img{
+	width: 20px;
+	transition: all 0.5s ease;
+}
+#quantity{
+	position: absolute;
+	top:17px;
+	right:150px;
+	width: 30px;
+	height: 30px;
+	font-family: 'Ubuntu', sans-serif;
+	border-radius:50%;
+	background-color: orangered;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	padding-top: 3px;
+}
+#quantity:hover{
+	background-color:black;
+	color:orangered;
+}
+#cart-img{
+	cursor: pointer;
+	position: absolute;
+	top:16px;
+	transition:all 0.2s ease;
+	right: 190px;	
+	font-size: 30px;
+}
+#cart-img:hover{
+	opacity: 0.6;
+}
+#fixed-menu{
+	width: 100vw;
+	background-color: white;
+	height: 8vh;
+	position:absolute;
+	top:130px;
+	z-index: 5;
+}
+#option-menu{
+	margin-left:100px;
+	width: 720px;
+	display: flex;
+	background-color: white;
+	color: black;
+	height: 100%;
+}
+#option-menu>div{
+	flex-grow: 1;
+	text-align: center;
+	cursor: pointer;
+	width: 180px;
+	font-size: 25px;
+	font-weight: bold;
+	transition: all 0.2s ease;
+	padding-top: 14px;
+	font-family: 'Ubuntu', sans-serif;
+}
+#option-menu>div:hover{
+	color: orangered;
+	border-bottom:3px solid black;
+}
+.drop-down{
+	position: absolute;
+	font-family: 'Roboto', sans-serif;
+	color:orangered;
+	background-color: white;
+	border-radius: 5px;
+	border-bottom:3px solid black;
+	transition: all 0.5s ease;
+	top:8vh;
+	display: none;
+	animation: moveup 0.5s ease;
+}
+#option-menu>div:hover .drop-down{
+	display: block;
+}
+#games-content{
+	width: 820px;
+	height:360px;
+}
+#gears-content{
+	width: 820px;
+	height:360px;
+}
+@keyframes moveup{
+	from{
+		opacity: 0;
+		top:12vh;
+	}
+	to{
+		opacity: 1;
+		top:8vh;
+	}
+}
+.drop-down>div{
+	float:right;
+	width:320px;
+	height:180px;
+	padding-top:20px;
+	padding-left:30px;
+	text-align: left;
+	position: relative;
+}
+.describe{
+	clear:both;
+	position: absolute;
+	left:0;
+	top:0;
+	width: 180px;
+	height: 360px;
+	padding:0;
+	margin: 0;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	color: black;
+	padding-top:35px;
+	list-style-type:none;
+}
+.describe li:first-of-type{
+	margin-top: 30px;
+}
+.describe li{
+	margin-top: 10px;
+	text-align: center;
+	color: orangered;
+	font-size:20px;
+}
+.drop-down>div>img{
+	height:120px;
+
+}
+#gears-content>div:nth-of-type(2){
+	background: url("hyperx.jpg") no-repeat center;
+	background-size: cover;
+}
+#gears-content>div:nth-of-type(1){
+	background: url("corsair.jpg") no-repeat center;
+	background-size: cover;
+}
+#gears-content>div:nth-of-type(4){
+	background: url("g502.jpg") no-repeat center;
+	background-size: cover;
+}
+#games-content>div>h1{
+	font-size:20px;
+	text-align: center;
+	position: absolute;
+	top:25px;
+	color: black;
+	right:30px;
+	transition: all 0.3s ease;
+}
+#games-content>div>h1:hover{
+	color: orangered;
+}
+.drop-down>div:nth-of-type(3){
+	text-align: center;
+}
+.more{
+	text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
+	font-size:22px;
+	text-align: center;
+	padding:10px;
+	background-color: orangered;
+	color: white;
+	padding-left: 50px;
+	position: absolute;
+	padding-right:50px;
+	top:55px;
+	z-index: 1;
+	transition: all 0.5s ease;
+	right:80px;
+}
+.more:hover{
+	background-color: #4fed3d;
+}
+.black-out{
+	background-color: black;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0.6;
+	top:0;
+	left:0;
+}
+#gears-content>div:nth-of-type(3){
+	background: url("msi.jpg") no-repeat center;
+	background-size: cover;
+}
+.ft{
+	position: absolute;
+	top:5px;
+	left:5px;
+	text-align: left;
+	font-family: 'Ubuntu',sans-serif;
+	font-size: 25px;
+	color: white;
+	transition: all 0.5s ease;
+}
+#gears-content>div:hover .ft{
+	transform: translateX(90px);
+	color: orangered;
+}
+#gears-content>div>img{
+	position: absolute;
+	bottom:15px;
+	left:20px;
+	height: 80px;
+}
+#spc{
+	padding-left: 80px;
+}
+#slide-show{
+	width: 100vw;
+	height: 76vh;
+	background-color: green;
+	margin:8vh auto;
+	overflow: hidden;
+}
+#slide-show>i{
+	font-size: 100px;
+	color: white;
+	opacity: 0.6;
+	transition: all 0.2s linear;
+	cursor:pointer;
+	position: absolute;
+	z-index: 1;
+}
+#slide-show>i:last-of-type{
+	left:20px;
+	top:53vh;
+}
+#slide-show>i:first-of-type{
+	right:20px;
+	top:53vh;
+}
+#slide-show>i:hover{
+	opacity: 1;
+}
+#slide-show img{
+	float:left;
+	width: 100vw;
+	display: block;
+}
+#wrap-slide{
+	width: 500vw;
+	height: 76vh;
+	margin-left: -100vw;
 }

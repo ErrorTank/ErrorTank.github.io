@@ -7,9 +7,12 @@
 	<link rel="icon" type="image/png" href="japanese-dragon.png"/>
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Days+One" rel="stylesheet">
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+	<script src="https://use.fontawesome.com/0808af2d1f.js"></script>
 </head>
 <body>
-	<div id="email-confirm">
+	<!--<div id="email-confirm">
 		<div id="ec-wrap" class="drop">
 			<div id="img-contain" class="ec-child">
 				<div id="black-fade">
@@ -29,8 +32,81 @@
 			</div>
 			<img id="ec-quit" src="quit.png" title="quit"/>
 		</div>
+	</div>-->
+	<div id="main-menu">
+		<div id="shop-name"><a href="ecomerce.html">G<img src="business.png"/>ME<br/><p>Store</p></a></div>
+		<form action="" method="" autocomplete>
+			<input type="text" placeholder="Search for any game...." />
+			<button type="button"><img src="search.png" title="Search"/></button>
+		</form>
 	</div>
+	<div id="fixed-menu">
+		<i id="cart-img" class="fa fa-shopping-cart" aria-hidden="true"></i>
+		<div id="quantity">0</div>
+		<div id="option-menu">
+			<div class="changeable">Games<div id="games-content" class="drop-down">
+				<div>
+					<img src="cod.jpg"/>
+					<h1>Call Of Duty<br/>Ghost<br/><p style="display: inline;font-size: 15px; text-decoration: line-through;">$39.99</p><br/>$29.99</h1>
+				</div>
+				<div>
+					<img src="sk.jpg"/>
+					<h1>Elder Scrolls V<br/>Skyrim<br/><p style="display: inline;font-size: 15px; text-decoration: line-through;">$49.99</p><br/>$34.99</h1>
+				</div>
+				<div>
+					<a class="more" href="games.html">
+						More
+					</a>
+				</div>
+				<div><img src="mtk.jpg"/><h1>Mortal Kombat<br/>X<br/><p style="display: inline;font-size: 15px; text-decoration: line-through;">$69.99</p><br/>$45.99</h1></div>
+				<ul class="describe">
+					All Platforms
+					Fearture
+					<li>PC</li>
+					<li>PS4</li>
+					<li>XBOX</li>
+				</ul>
+			</div></div>
+			<div class="changeable">Gears<div id="gears-content" class="drop-down">
+				<div><div class="black-out"></div><div class="ft">Fearturing</div><img id="spc" src="corsair-logo.png"/></div>
+				<div><div class="black-out"></div><div class="ft">Fearturing</div><img src="hyperx-logo.png"/></div>
+				<div><a class="more" href="gears.html">
+						More
+					</a>
+						<div class="black-out"></div>
+				</div>
+				<div>
+					<div class="black-out"></div>
+					<div class="ft">Fearturing</div>
+					<img src="lgi-logo.png"/>
+				</div>
+				<ul class="describe">
+					Gear Up Your
+					Weapon
+					<li>Keyboard</li>
+					<li>Mouse</li>
+					<li>Headset</li>
+					<li>VR Ready 
+					Notebook</li>
+				</ul>
+			</div></div>
+			<div>Purchase</div>
+			<div>About</div>
+		</div>
+	</div>
+	<div id="slide-show">
+		<i id="right" class="fa fa-angle-right" aria-hidden="true"></i>
+		<i id="left" class="fa fa-angle-left" aria-hidden="true"></i>
+		<div id="wrap-slide">
+			<img id="3" src="slide-3.jpg"/>
+			<img id="1" src="slide-1.jpg"/>
+			<img id="2" src="slide-2.jpg"/>
+			<img id="3" src="slide-3.jpg"/>
+			<img id="1" src="slide-1.jpg"/>
+		</div>
+	</div>	
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/functional.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
 </body>
 </html>
