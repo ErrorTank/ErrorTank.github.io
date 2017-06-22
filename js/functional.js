@@ -76,5 +76,5 @@ $(document).ready(function(){
 		});
 		
 	});
-	$("#slide-show").on("mouseenter",tempStop).on("mouseleave",slide);
+	$("#wrap-slide").on("mouseenter",tempStop).on("mouseleave",slide);
 });

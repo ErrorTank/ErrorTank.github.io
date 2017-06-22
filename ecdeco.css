@@ -9,7 +9,7 @@ body{
 	height: 1200px;
 	padding:0;
 	overflow-x: hidden;
-	background-color: orangered;
+	background-color: white;
 }
 #email-confirm{
 	position:fixed;
@@ -466,9 +466,10 @@ body{
 	padding-left: 80px;
 }
 #slide-show{
-	width: 100vw;
-	height: 76vh;
-	margin:8vh auto;
+	width: 1536px;
+	height: 600px;
+	margin:auto;
+	margin-top:8vh;
 	overflow: hidden;
 }
 #slide-show>i{
@@ -500,4 +501,149 @@ body{
 	width: 500vw;
 	height: 76vh;
 	margin-left: -100vw;
+}
+#main-wrap{
+	width: 1200px;
+	top:0;
+	background-color: white;	
+	height: 900px;
+	margin:auto;
+}
+#main-wrap>div{
+	background-color: white;
+	width: 1200px;
+	height: 300px;
+	position: relative;
+	font-family: 'Roboto', sans-serif;
+}
+.content-title{
+	position: absolute;
+	top:10px;
+	margin:0;
+	left:15px;
+	padding: 0;
+	text-align: center;
+	color:orangered;
+	font-size:30px;
+}
+.slide-menu{
+	background-color: white;
+	position: absolute;
+	bottom:0;
+	right:0;
+	width: 1000px;
+	height: 250px; 
+	border-left:5px solid black;
+	overflow-x:hidden;
+}
+.move-list{
+	width: 1200px;
+	height: 250px;
+	margin-left:0;
+	cursor: pointer;
+}
+.item{
+	float: left;
+	width: 300px;
+	position: relative;
+	height: 250px;
+}
+.slide-menu >i{
+	padding:0;
+	cursor: pointer;
+	font-size:80px;
+	position: absolute;
+	opacity: 0.7;
+	color:orangered;
+	top:80px;
+	z-index: 1;	
+	transition: all 0.2s ease;
+}
+.slide-menu >i:hover{
+	opacity: 1;
+}
+.prev{
+	left:5px;
+}
+.next{
+	right:5px;
+}
+.imgs-contain{
+	position: absolute;
+	top: 0;
+	width: 300px;
+	height: 250px;
+	z-index: 0;
+	overflow: hidden;
+	text-align: center;
+}
+.imgs-contain img{
+	width: 300px;
+}
+.name{
+	z-index: 1;
+	position: absolute;
+	text-align: center;
+	font-size:18px;
+	color:orangered;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	bottom:5px;
+	margin:0;
+	left:50%;
+	max-width: 200px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	max-height: 100px;
+	transform: translateX(-50%);
+}
+.p-contain{
+	background-color: rgba(0,0,0,0.8);
+	position: absolute;
+	width: 0px;
+	z-index: 3;
+	height: 250px;
+	overflow: hidden;
+	left:300px;
+	transition:all 0.5s ease;
+}
+.item:hover .p-contain{
+	width: 300px;
+	left:0;
+}
+.buy,.add-to-cart{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	backgroolor: orangered;
+	color:white;
+	font-size:26px;
+	padding-top: 10px;
+	border-radius:50%;
+	font-weight: normal; 
+	text-align: center;
+	transition: all 0.3s ease;
+}
+.buy{
+	top:100px;
+	left:90px;
+}
+.add-to-cart{
+	top:100px;
+	left:160px;
+}
+.buy:hover{
+	background-color: black;
+	color:#42f4e2;
+}
+.add-to-cart:hover{
+	background-color: black;
+	color:#42f4e2;
+}
+.price-contain{
+	position: absolute;
+	width: 200px;
+	height: 250px;
+	background-color: ;
+	bottom:0;
 }
