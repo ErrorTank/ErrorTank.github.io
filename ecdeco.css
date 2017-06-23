@@ -533,7 +533,6 @@ body{
 	right:0;
 	width: 1000px;
 	height: 250px; 
-	border-left:5px solid black;
 	overflow-x:hidden;
 }
 .move-list{
@@ -547,6 +546,7 @@ body{
 	width: 300px;
 	position: relative;
 	height: 250px;
+	transition:all 0.5s ease;
 }
 .slide-menu >i{
 	padding:0;
@@ -607,6 +607,9 @@ body{
 	left:300px;
 	transition:all 0.5s ease;
 }
+.item:hover{
+	box-shadow: 0px 10px 10px 5px black;
+}
 .item:hover .p-contain{
 	width: 300px;
 	left:0;
@@ -644,9 +647,38 @@ body{
 	position: absolute;
 	width: 200px;
 	height: 250px;
-	background-color:rgba(0,0,0,0.7);
+	background-color:orangered;
 	bottom:0;
+	border:3px solid black;
+	display: none;
 }
 .logo-contain{
-	
+	width: 200px;
+	margin: auto;
+	height: 100px;
+	padding-top:10px;
+	text-align: center;
+}
+.logo-contain>img{
+	max-height: 100px;
+	max-width: 180px;
+}
+.old-price{
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	font-size:25px;
+	color:black;
+	margin:auto;
+	margin-top: 2px;
+	padding-top:15px;
+	text-decoration: line-through;
+}
+.price{
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	font-size:40px;
+	color:white;
+	font-weight: bold;
+	margin:auto;
+	margin-top: 0;
 }
