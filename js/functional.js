@@ -180,23 +180,47 @@ $(document).ready(function(){
 			t="#logo3";
 		$(t).parent().parent().css("display","none");
 	});
+	$(".prev").on("click",function(){
+		var t="";
+		if($(this).parent().hasClass("atnew"))
+			t=".newm";
+		else if($(this).parent().hasClass("atbest"))
+			t=".bestm";
+		else if($(this).parent().hasClass("atsale"))
+			t=".salem";
+		var s=$(t).css("margin-left");
+		var t1=s.slice(0,s.length-2);
+		t1=Number(t1);
+		var move="100px";
+		if(t1<100 && t1>=0){
+			move=t1;
+			move=move+"px";
+		}
+		console.log(move);
+		$(t).animate({marginLeft:"+="+move},100,function(){
+
+		});
+		return false;
+	});
 	$(".next").on("click",function(){
 		var t="";
 		if($(this).parent().hasClass("atnew"))
-			t=".atnew";
+			t=".newm";
 		else if($(this).parent().hasClass("atbest"))
-			t=".atbest";
+			t=".bestm";
 		else if($(this).parent().hasClass("atsale"))
-			t=".atsale";
-		$(t).animate({marginLeft:"+=50px"},300,function(){
-			alert("me");
-			var s=$(this).css("margin-left");
-			var t1=s.slice(0,s.length-2);
-			t1=Number(t1);
-
+			t=".salem";
+		var s=$(t).css("margin-left");
+		var t1=s.slice(0,s.length-2);
+		t1=Number(t1);
+		var move="100px";
+		if(t1>=-200 && t1<-100){
+			move=200+t1;
+			move=move+"px";
+		}
+		$(t).animate({marginLeft:"-="+move},100,function(){
+			
 		});
-	});
-	$(".prev").on("click",function(){
-		
+		return false;
 	});
 });
