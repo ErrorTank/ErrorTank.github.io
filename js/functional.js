@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+	$("#quantity").html(sessionStorage.q);
 	$("#ec-quit").click(function(){
 		$("#ec-wrap").addClass("falldown").delay(500).fadeTo(500,0,function(){
 			$("#email-confirm").remove();
@@ -222,5 +223,29 @@ $(document).ready(function(){
 			
 		});
 		return false;
+	});
+	$(".item .add-to-cart").on("click",function(){
+		var t=$(this).parent().parent();
+		var t1=Number($("#quantity").html());			
+		t1++;
+		console.log(t1);
+		$('<div class="loading"><div class="spin"></div><h1 class="l">Loading...</h1></div>').appendTo(t);
+		var to1=setTimeout(function(){
+			$(t).find(".loading").remove();
+		},1000);
+		var to2=setTimeout(function(){
+			$("#quantity").html(t1);
+			sessionStorage.setItem('q',$("#quantity").html());
+			var info=$(t).find(".name").html();
+			$("#pn").html(info);
+			$("#notification").show("fade",300);
+			$("#cart-img").css("color","#56f441");
+			setTimeout(function(){
+				$("#notification").hide("fade",300);
+			},3500);
+			setTimeout(function(){
+				$("#cart-img").css("color","black");
+			},3500);
+		},1000);
 	});
 });

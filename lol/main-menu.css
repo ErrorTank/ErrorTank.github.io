@@ -1,0 +1,139 @@
+body{
+	font-family: sans-serif;
+	color: #333;
+}
+#menu ul{
+	list-style-type: none;
+	background: white;
+	text-align: center;
+	overflow: hidden;
+	position: absolute;
+	top:-10px;
+	right: 0px;
+}
+#menu ul li {
+	color: #f1f1f1;
+	float:right;
+	width: 300px;
+	height: 60px;
+	line-height: 60px;
+}
+#menu ul li a {
+	color: black;
+	text-decoration: none;
+	display: block;
+}
+#menu ul li a:hover {
+	background: black;
+	color: white;
+}
+#icon{
+	display: inline-block;
+	height : 50px;
+	width: 230px;
+}
+#base{
+	width: 100px;
+	height: 60px;
+	position: absolute;
+	left: 10px;
+	top: 8px;
+}
+
+
+#menu-bottom-background{
+	width: 1500px;
+	height: 703px;
+}
+#game{
+	width: 370px;
+	height: 657px;
+	position: absolute;
+	top:70px;
+	left:15px;
+}
+#music{
+	width: 370px;
+	height: 657px;
+	position: absolute;
+	top:70px;
+	left: 392px;
+}
+#tech{
+	width: 370px;
+	height: 657px;
+	position: absolute;
+	top:70px;
+	left: 770px;
+}
+#weeb{
+	width: 370px;
+	height: 657px;
+	position: absolute;
+	top:70px;
+	left: 1149px;
+}
+#tag-background{
+	width: 370px;
+	height: 657px;
+	opacity: 0.65;
+	background-color: black;
+	position: absolute;
+}
+#tag{
+	font-size: 100px;
+	color: white;
+}
+#tag-img{
+	width: 370px;
+	height: 657px;
+}
+#img{
+	display: inline-block;
+	height : 657px;
+	width: 370px;
+}
+#game:hover{
+	transform: scale(0.9);
+	border: 5px solid #858687;
+	border-radius: 10px;
+}
+#music:hover{
+	transform: scale(0.9);
+	border: 5px solid #858687;
+	border-radius: 10px;
+}
+#tech:hover{
+	transform: scale(0.9);
+	border: 5px solid #858687;
+	border-radius: 10px;
+}
+#weeb:hover{
+	transform: scale(0.9);
+	border: 5px solid #858687;
+	border-radius: 10px;
+}
+#tag-base-game{
+	position: absolute;
+	top:7px;
+	left: 37px;
+	opacity: 0.75;
+}
+#tag-base-music{
+	position: absolute;
+	top:7px;
+	left:28px;
+	opacity: 0.75;
+}
+#tag-base-tech{
+	position: absolute;
+	top:7px;
+	left:52px;
+	opacity: 0.75;
+}
+#tag-base-anime{
+	position: absolute;
+	top:7px;
+	left:30px;
+	opacity: 0.75;
+}

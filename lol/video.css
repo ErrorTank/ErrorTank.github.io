@@ -1,0 +1,155 @@
+#base{
+	height: 700px;
+	width: 1410px;
+	background-color: white;
+	position: absolute;
+}
+#main-video{
+	background-color: black;
+	position: absolute;
+	height: 600px;
+	width: 1000px;
+	top:50px;
+	left: 75px;
+	border: 20px solid grey;
+	border-radius: 25px;
+}
+#suggestion-sub{
+	position: absolute;
+	background-color: white;
+	width: 300px;
+	height: 100px;
+	top: 10px;
+	left: 1190px;
+}
+#sub{
+	font-size: 50px;
+
+}
+#suggestion-1{
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top: 70px;
+	left: 1200px;
+	border: 4px solid grey;
+	border-radius: 5px;
+}
+#suggestion-2{
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top: 285px;
+	left: 1200px;
+	border: 4px solid grey;
+	border-radius: 5px;
+}
+#suggestion-3{
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top: 500px;
+	left: 1200px;
+	border: 4px solid grey;
+	border-radius: 5px;
+}
+#sub-background{
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	opacity: 0.65;
+	background-color: black;
+}
+#background{
+	display: inline-block;
+	height : 200px;
+	width: 300px;
+}
+#sub-contain{
+	color: white;
+	font-size: 80px;
+}
+#suggestion-1:hover{
+	transform: scale(1.05);
+}
+#suggestion-2:hover{
+	transform: scale(1.05);
+}
+#suggestion-3:hover{
+	transform: scale(1.05);
+}
+#sub-base-music-game{
+	position: absolute;
+	left: 29px;
+	top: 50px;
+	opacity: 0.75;
+}
+#sub-base-tech-game{
+	position: absolute;
+	left: 45px;
+	top: 54px;
+	opacity: 0.75;
+}
+#sub-base-anime-game{
+	position: absolute;
+	left: 20px;
+	top: 53px;
+	opacity: 0.75;
+}
+
+#sub-base-game-music{
+	position: absolute;
+	left: 29px;
+	top: 50px;
+	opacity: 0.75;
+}
+#sub-base-tech-music{
+	position: absolute;
+	left: 45px;
+	top: 54px;
+	opacity: 0.75;
+}
+#sub-base-anime-music{
+	position: absolute;
+	left: 20px;
+	top: 53px;
+	opacity: 0.75;
+}
+
+#sub-base-game-tech{
+	position: absolute;
+	left: 29px;
+	top: 50px;
+	opacity: 0.75;
+}
+#sub-base-music-tech{
+	position: absolute;
+	left: 29px;
+	top: 54px;
+	opacity: 0.75;
+}
+#sub-base-anime-tech{
+	position: absolute;
+	left: 20px;
+	top: 53px;
+	opacity: 0.75;
+}
+
+#sub-base-game-anime{
+	position: absolute;
+	left: 29px;
+	top: 50px;
+	opacity: 0.75;
+}
+#sub-base-tech-anime{
+	position: absolute;
+	left: 45px;
+	top: 54px;
+	opacity: 0.75;
+}
+#sub-base-music-anime{
+	position: absolute;
+	left: 29px;
+	top: 54px;
+	opacity: 0.75;
+}

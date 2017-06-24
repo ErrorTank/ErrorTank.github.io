@@ -17,19 +17,21 @@ body {
 	left: 20px;
 }
 #menu {
+	
 	background-color:white;
 	height: 100px;
-	position: relative;
 	width: 100vw;
 }
 #menu1 {
-	padding: 0px 0px 0px 0px;
+
 	z-index: 1;
 	position: absolute;
 	width: 61vw;
+	height: 90px;
 	padding-top:0;
-	top:0px;
+	top:0;
 	right: 0;
+	
 }
 #menu1 ul{
 	background-color: white;
@@ -55,9 +57,6 @@ body {
 	padding-top: 30px;
 
 }
-#menu1a li> #special {
-	padding-top: 10px;
-}
 #menu1 ul li a:hover{
 	background: #333;
 	color: #f1f1f1;
@@ -69,15 +68,6 @@ body {
 #menu1 ul li:hover #menu1a {
 	display: block;
 }
-
-#menu2 {
-	color: white;
-	background-color:#c1a3cc;
-	border: 10px inset white;
-	margin: 1em;
-}
-
-
 .ct {
 	margin: 0px 90px 0px 90px;
 	height: 100vh;
@@ -93,18 +83,17 @@ h1 {
 	padding: 2em;
 }
 #i1 {
-	width: 480px;
+	width: 532px;
 	height: 350px;
 	float: left;
 	border:10px solid #4c5563;
 	margin:20px 20px 40px 20px;
-	position: relative;
 }
 #i1:hover {
 	transform: scale(1.25) ;
 }
 #i2 {
-	width: 480px;
+	width: 532px;
 	height: 350px;
 	border:10px  solid #4c5563;
 	margin: 20px 20px 40px 20px;
@@ -116,3 +105,20 @@ h1 {
 #in1 {
 	width: 87vw;
 }
+#esp {
+	height: 452px;
+}
+#onl {
+	height: 452px;
+}
+input {
+	width: 500px;
+    border: 0;
+    padding: 10px;
+    font-size: 18px; 
+}
+    input[type="submit"] {
+    width: 100px;
+    background: #0d2956;
+    color: white;
+    }
