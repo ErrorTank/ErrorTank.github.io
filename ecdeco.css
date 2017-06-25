@@ -19,7 +19,7 @@ body{
 	background-color:rgba(255, 255, 255,0.5);
 	padding-top:20vh;
 	overflow: auto;
-	z-index: 2;
+	z-index: 8;
 }
 #ec-wrap{
 	width:70vw;
