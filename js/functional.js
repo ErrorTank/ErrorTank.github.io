@@ -240,7 +240,6 @@ $(document).ready(function(){
 		$('<div class="loading"><div class="spin"></div><h1 class="l">Loading...</h1></div>').appendTo(t);
 		var to1=setTimeout(function(){
 			$(t).find(".loading").remove();
-			var name=
 		},1000);
 		var to2=setTimeout(function(){
 			$("#quantity").html(t1);
