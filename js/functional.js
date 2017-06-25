@@ -1,6 +1,9 @@
 
 $(document).ready(function(){
 	$("#quantity").html(sessionStorage.q);
+	var date=new Date();
+	date=date.toDateString();
+	$("#date").html(date);
 	$("#ec-quit").click(function(){
 		$("#ec-wrap").addClass("falldown").delay(500).fadeTo(500,0,function(){
 			$("#email-confirm").remove();
@@ -23,7 +26,7 @@ $(document).ready(function(){
 		},2000);
 	});
 	$(window).scroll(function(){
-		if($(document).scrollTop()>=120){
+		if($(this).scrollTop()>=120){
 			$("#fixed-menu").css("position","fixed");
 			$("#fixed-menu").css("top","0");
 		}
@@ -248,4 +251,66 @@ $(document).ready(function(){
 			},3500);
 		},1000);
 	});
+	$("#cart-info .product i").on("click",function(){
+		$(this).parent().hide("fade",500,function(){
+			$(this).remove();
+		});
+	});
+	$(window).on("click",function(e){
+		if(e.target.id=="cart-info-contain"){
+			$("#cart-info-contain").hide("fade",500);
+			$("#cart-info").hide("fade",500);
+		}	
+	});
+	$("#keep").on("click",function(){
+		$("#cart-info-contain").hide("fade",500);
+		$("#cart-info").hide("fade",500);
+	});
+	function confirm(){
+		$("#noti-contain #yes").on("click",function(){
+			$("#loading-contain").css("display","block");
+			setTimeout(function(){
+				$("#loading-contain").css("display","block");
+				location.href="purchase.html";
+			},500);
+		});
+		$("#noti-contain #no").on("click",function(){
+			$("#noti-contain").hide("fade",500);
+		});
+	}
+	confirm();
+	function purchaseConfirm(){
+		$("#pur").on("click",function(){
+			$("#noti-contain").show("fade",500);
+		});
+	}
+	purchaseConfirm();
+	function openCart(){
+		$("#cart-img").on("click",function(){
+			$("#cart-info-contain").show("fade",500,function(){
+				$("#cart-info").css("display","block");
+			});
+		});
+	}
+	openCart();
+	$("#cart-info").scroll(function(){
+		var t=$("#cart-info").scrollTop()+200;
+		t=String(t)+"px";
+		console.log(t);
+		$("#right-wrap").css("top",t);
+	});
+	function backToTop(){
+		$("#back-top").on("click",function(){
+			$("html,body").animate({scrollTop:0}, 500);
+			return false;
+		});
+		$(window).scroll(function(){
+			if($(this).scrollTop()>=150){
+				$("#back-top").show("fade",100);
+			}
+			else
+				$("#back-top").hide("fade",100);
+		});
+	}
+	backToTop();
 });

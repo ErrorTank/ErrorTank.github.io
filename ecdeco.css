@@ -919,3 +919,347 @@ body{
 	color:orangered;
 	margin-top:5px;
 }
+#cart-info-contain{
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top:0;
+	z-index:6;
+	background-color:rgba(255,255,255,0.7);
+	display: none;
+}
+#cart-info{
+	position: relative;
+	width: 1000px;
+	height: 0px;
+	background-color:#1a1a1a;
+	margin:auto;
+	margin-top:12vh;
+	overflow-y: auto;
+	border-radius: 5px;
+	padding-bottom: 20px;
+	display: none;
+	border-bottom:5px solid orangered;
+	animation: cartSlide 0.6s ease forwards;
+}
+#shop-name-incart{
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	position: absolute;
+	font-size: 40px;
+	color: white;
+	margin-bottom: 0px;
+	letter-spacing: 5px;
+	margin-top: 20px;
+	margin-left: 100px;
+}
+#shop-name-incart >p{
+	font-size: 25px;
+	margin:0;
+	text-align: right;
+	width: auto;
+}
+#shop-name-incart >img{
+	vertical-align: sub;
+	width: 50px;
+	padding-right: 3px;
+}
+#cart-info >h1:nth-of-type(2){
+	font-weight: bold;
+	font-size: 45px;
+	text-align: center;
+	color:orangered;
+	position: absolute;
+	top:20px;
+	right:260px;
+	font-family: 'Lato', sans-serif;
+	letter-spacing: 8px;
+	margin-top:0;
+	margin-bottom: 0;
+}
+#date{
+	position: absolute;
+	right:80px;
+	top:80px;
+	font-family: 'Lato', sans-serif;
+	font-size:25px;
+	color: white;
+	letter-spacing: 5px;
+}
+.product{
+	width: 700px;
+	margin-left:40px;
+	height: 125px;
+	font-family: 'Lato', sans-serif;
+	position: relative;
+	font-size:20px;
+	clear: both;
+	padding-left: 10px;
+	margin-top:20px;
+}
+#bait{
+	margin-top:150px;
+	font-size: 20px;
+	font-family: 'Lato', sans-serif;
+	color: white;
+	margin-left:40px;
+}
+#bait>div{
+	text-align: center;
+	float:left;
+	margin-left: 20px;
+	padding-left: 14px;
+}
+#bait>div:nth-of-type(1){
+	width: 60px;
+	height: 30px;
+}
+#bait>div:nth-of-type(2){
+	width: 224px;
+	height: 30px;
+}
+#bait>div:nth-of-type(3){
+	width: 50px;
+	height: 30px;
+}
+#bait>div:nth-of-type(4){
+	width: 260px;
+	height: 30px;
+}
+.product >div{
+	float:left;
+	margin-left:20px;
+}
+.product .order{
+	font-size: 25px;
+	text-align: center;
+	color: white;
+	width: 60px;
+	height: 100%;
+	padding-top:40px;
+}
+.product .pic{
+	width:224px;
+	overflow:hidden;
+	border-radius: 8px;
+	border:3px solid white;
+	height:126px;
+}
+.product .pic img{
+	width: 224px;
+}
+.product .quantity{
+	width: 50px;
+	height: 100%;
+	text-align: center;
+	color:white;
+	padding-top:40px;
+	font-size:25px;
+}
+.product .pname{
+	width: 260px;
+	height: 100%;
+	padding-top:20px;
+	color:white;
+	font-size:25px;
+	text-align: center;
+}
+.product i{
+	color:white;
+	font-size:15px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+.product i:hover{
+	color:red;
+}
+#total-contain{
+	width: 200px;
+	height: 100px;
+	color:white;
+	font-size:25px;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	margin:auto;
+	margin-bottom:20px;
+}
+#total-contain h1{
+	display: inline-block;
+	margin:0;
+	font-size: 25px;
+	padding-top: 10px;
+}
+#right-wrap{
+	width: 250px;
+	position: absolute;
+	top:200px;
+	right: 0;
+}
+@keyframes cartSlide{
+	from{
+		height: 0;
+	}
+	to{
+		height: 610px;
+	}
+}
+#keep{
+	width: 150px;
+	text-align: center;
+	color: white;
+	height: 50px;
+	font-size: 20px;
+	padding-top:12px;
+	font-family: 'Lato', sans-serif;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	border-radius: 5px;
+	background: orangered;
+	font-weight: bold;
+	margin:auto;
+}
+#pur{
+	width: 150px;
+	text-align: center;
+	color: white;
+	height: 50px;
+	font-size: 20px;
+	padding-top:12px;
+	font-family: 'Lato', sans-serif;
+	cursor: pointer;
+	background: orangered;
+	transition: all 0.3s ease;
+	border-radius: 5px;
+	font-weight: bold;
+	margin:auto;
+	margin-top:20px;
+}
+#keep:hover ,#pur:hover{
+	background-color: black;
+	color:#41f44a;
+}
+#noti-contain{
+	position: fixed;
+	background-color:rgba(255,255,255,0.8);
+	width: 100vw;
+	height: 100vh;
+	z-index: 7;
+	top:0;
+	display: none;
+}
+#noti{
+	position: relative;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	width: 400px;
+	height: 200px;
+	background-color:#1a1a1a;
+	border-bottom: 5px solid orangered;
+	border-radius: 5px;
+	font-family: 'Lato', sans-serif;
+}
+#noti >h1:first-of-type{
+	text-align: center;
+	margin:auto;
+	font-size:35px;
+	color:white;
+	font-weight: bold;
+	letter-spacing: 5px;
+}
+#noti >h1:nth-of-type(2){
+	color: #42f4d7;
+	margin:auto;
+	text-align: center;
+	font-size:20px;
+	padding-left:15px;
+	padding-right:15px;
+	margin-top:20px;
+	letter-spacing: 2px;
+}
+#yes{
+	width: 80px;
+	height: 40px;
+	text-align: center;
+	font-size:30px;
+	color:white;
+	position: absolute;
+	background-color: orangered;
+	font-family: 'Lato', sans-serif;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+	padding-top: 2px;
+	bottom:25px;
+	left:100px;
+    cursor: pointer;
+}
+#no{
+	width: 80px;
+	height: 40px;
+	text-align: center;
+	font-size:30px;
+	color:white;
+	position: absolute;
+	background-color: orangered;
+	font-family: 'Lato', sans-serif;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+	padding-top: 2px;
+	cursor: pointer;
+	bottom:25px;
+	right:100px;
+}
+#yes:hover{
+	background-color: black;
+	color: #41f44a;
+}
+#no:hover{
+	background-color: black;
+	color: red ;
+}
+#loading-contain{
+	text-align: center;
+	background-color: rgba(255,255,255,0.8);
+	font-family: 'Lato', sans-serif;
+	position: absolute;
+	width: 400px;
+	height: 200px;
+	top:0;
+	display: none;
+	z-index: 1;
+}
+#loading-contain>h1{
+	color:#1a1a1a;
+	font-size: 25px;
+}
+#loading-contain div{
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	border-left:5px solid orangered;
+	border-top:5px solid black;
+	border-right:5px solid orangered;
+	border-bottom:5px solid black;
+	animation: spinning 0.5s linear infinite;
+	margin: auto;
+	margin-top:60px;
+}
+#back-top{
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	position: fixed;
+	background-color: orangered;
+	border: 3px solid white;
+	display: none;
+	text-align: center;
+	right:20px;
+	bottom:50px;
+	font-size: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+#back-top:hover{
+	color:#42f4d7;
+	background-color:#1a1a1a;
+}
