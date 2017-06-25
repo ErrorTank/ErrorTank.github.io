@@ -1,6 +1,12 @@
 
 $(document).ready(function(){
 	$("#quantity").html(sessionStorage.q);
+	var stuff=function(s,n,p){
+		this.src=source;
+		this.name=n;
+		this.price=p;
+	}
+	var stuffList=[];
 	var date=new Date();
 	date=date.toDateString();
 	$("#date").html(date);
@@ -231,10 +237,10 @@ $(document).ready(function(){
 		var t=$(this).parent().parent();
 		var t1=Number($("#quantity").html());			
 		t1++;
-		console.log(t1);
 		$('<div class="loading"><div class="spin"></div><h1 class="l">Loading...</h1></div>').appendTo(t);
 		var to1=setTimeout(function(){
 			$(t).find(".loading").remove();
+			var name=
 		},1000);
 		var to2=setTimeout(function(){
 			$("#quantity").html(t1);
@@ -313,4 +319,12 @@ $(document).ready(function(){
 		});
 	}
 	backToTop();
+	$(".item .buy").on("click",function(){
+		var t=$(this).parent().parent();
+		$('<div class="loading"><div class="spin"></div><h1 class="l">Loading...</h1></div>').appendTo(t);
+		var to1=setTimeout(function(){
+			$(t).find(".loading").remove();
+			location.href="purchase.html";
+		},1000);
+	});
 });
