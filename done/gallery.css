@@ -70,6 +70,19 @@ body {
 #menu1 ul li:hover #menu1a {
 	display: block;
 }
+#menu1a{
+	animation: slide 0.5s ease;
+}
+@keyframes slide{
+	from{
+		transform: translateY(50px);
+		opacity: 0;
+	}
+	to{
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
 .ct {
 	margin: 0px 90px 0px 90px;
 	height: 100vh;
@@ -91,8 +104,9 @@ h1 {
 	border:10px solid #4c5563;
 	margin:20px 20px 40px 20px;
 	transition:all 0.3s ease;
+	overflow: hidden;
 }
-#i1:hover {
+#i1:hover{
 	transform: scale(1.25) ;
 }
 #i2 {
@@ -102,8 +116,9 @@ h1 {
 	margin: 20px 20px 40px 20px;
 	float: right;
 	transition:all 0.3s ease;
+	overflow: hidden;
 }
-#i2:hover {
+#i2:hover{
 	transform: scale(1.25);
 }
 #in1 {
