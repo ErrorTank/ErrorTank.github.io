@@ -87,11 +87,14 @@ body{
 #tag-img{
 	width: 370px;
 	height: 657px;
+	text-align: center;
+	overflow: hidden;
+
 }
 #img{
 	display: inline-block;
 	height : 657px;
-	width: 370px;
+	left: 100px;
 }
 #game:hover{
 	transform: scale(0.9);
