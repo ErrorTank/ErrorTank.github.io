@@ -30,7 +30,6 @@ body{
 #icon{
 	display: inline-block;
 	height : 50px;
-	width: 230px;
 }
 #base{
 	width: 100px;
@@ -39,8 +38,29 @@ body{
 	left: 10px;
 	top: 8px;
 }
-
-
+#link-base{
+	text-decoration: none;
+}
+#base-icon{
+	width: 100px;
+	height: 60px;
+	position: absolute;
+	left: 10px;
+	top: 8px;
+}
+#base-subs{
+	position: relative;
+	width: 100px;
+	height: 60px;
+	left: 49px;
+	top: -41px;
+}
+#icon-subs{
+	font-size: 50px;
+	font-family: sans-serif;
+	text-decoration: none;
+	color: black;
+}
 #menu-bottom-background{
 	width: 1500px;
 	height: 703px;

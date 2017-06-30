@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 body {
-	background: url(0H0txhL.jpg) ;
+	background: url(demacia-hallvalor.jpg) ;
 	background-size: cover;
 	background-repeat: no-repeat; 
 	margin: 0 auto;
@@ -83,16 +83,89 @@ body {
 		opacity: 1;
 	}
 }
-.ct {
+#ct {
 	margin: 0px 90px 0px 90px;
-	height: 100vh;
+	height: 200vh;
 	width: 87vw;
+	position: relative;
+	background-color: rgba(26,26,26,0.9);
+}
+
+#wel {
+	background:url(Steiger_Dynamics_Living_Room_PC_HTPC_Couchmaster_PC_Gaming_Sofa.jpg);
+	background-size: cover;
+	background-attachment: fixed; 
+	background-repeat: no-repeat; 
+	height: 90vh;
+	width: 100vw;
+}
+#title{
+	font-family: 'Monda', sans-serif;
+	padding: 120px 90px 90px 200px;
+	position: relative;
+	animation: myAnimation 2s ease-out;
+}
+@keyframes myAnimation {
+	from{bottom: -200px;}
+	to{bottom: 0px;}
+}
+span{
+	color: white;
+}
+#font1{
+	margin-bottom: 100px;
+	text-shadow: 0 0 10px #076bef;
+}
+#font2{
+	padding-left: 40px;
+	text-shadow: 0 0 10px #076bef;
+}
+#font3{
+	font-family: 'Monda', sans-serif;
+	text-shadow: 0 0 10px #076bef;
 }
 h1 {
-
 	color: #f1f1f1;
 	font-size: 36px;
 	font-family: "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;
+}
+#icon{
+	display: inline-block;
+	height : 50px;
+}
+#base{
+	width: 100px;
+	height: 60px;
+	position: absolute;
+	left: 10px;
+	top: 8px;
+}
+#link-base{
+	text-decoration: none;
+}
+#base-icon{
+	width: 100px;
+	height: 60px;
+	position: absolute;
+	left: 10px;
+	top: 20px;
+}
+#base-subs{
+	position: relative;
+	width: 100px;
+	height: 60px;
+	left: 60px;
+	top:15px;
+
+}
+#icon-subs{
+	font-size: 50px;
+	font-family: sans-serif;
+	text-decoration: none;
+	color: black;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 #no1 {
 	padding: 2em;
@@ -101,8 +174,8 @@ h1 {
 	width: 532px;
 	height: 350px;
 	float: left;
-	border:10px solid #4c5563;
-	margin:20px 20px 40px 20px;
+	border:5px solid white;
+	border-radius: 5px;
 	transition:all 0.3s ease;
 	overflow: hidden;
 }
@@ -112,8 +185,8 @@ h1 {
 #i2 {
 	width: 532px;
 	height: 350px;
-	border:10px  solid #4c5563;
-	margin: 20px 20px 40px 20px;
+	border:5px solid white;
+	border-radius: 5px;
 	float: right;
 	transition:all 0.3s ease;
 	overflow: hidden;
@@ -140,4 +213,30 @@ input {
     width: 100px;
     background: #0d2956;
     color: white;
+    cursor:pointer;
+    transition: all 0.4s ease;
     }
+    input[type="submit"]:hover{
+    	background: white;
+    	color:#4286f4;
+    }
+    #last{
+    	 position: absolute;
+    	 bottom:50px;
+    	 left: 50%;
+    	 transform: translateX(-50%);
+    }
+#bottom {
+	width: 100vw;
+	height: 16vh;
+	background-color: #111;
+}
+#para {
+	font-size: 18px;
+	color: white;
+	text-align: center;
+	padding-top: 30px;
+}
+#title span{
+	color:;
+}

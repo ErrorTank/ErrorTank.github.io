@@ -1,9 +1,10 @@
 
 $(document).ready(function(){
-	var stuff=function(s,n,p){
+	var stuff=function(s,n,p,q){
 		this.src=s;
 		this.name=n;
 		this.price=p;
+		this.qty=q;
 	}
 	var stuffList=[];
 	if(sessionStorage.getItem("arr")!=null)
@@ -13,14 +14,14 @@ $(document).ready(function(){
 			$('<div class="product"><div class="order"></div><div class="pic"><img src=""/></div><div class="quantity"></div><div class="pname"></div><i class="fa fa-times" aria-hidden="true"></i></div>').appendTo("#cart-info");
 			$($(".product")[i]).find(".order").html(i+1);
 			$($(".product")[i]).find("img").attr("src",stuffList[i]["src"]);
-			$($(".product")[i]).find(".quantity").html(1);
+			$($(".product")[i]).find(".quantity").html(stuffList[i]["qty"]);
 			$($(".product")[i]).find(".pname").html(stuffList[i]["name"]);
 			$($(".product")[i]).find("i").on("click",function(){
 				var specify=$(this).parent().find("img").attr("src");
 				var money;
 				for(var i=0;i<stuffList.length;i++){
 					if(stuffList[i]["src"]==specify){
-						money=Number(stuffList[i]["price"].slice(0,stuffList[i]["price"].length-1));
+						money=Number(stuffList[i]["price"].slice(0,stuffList[i]["price"].length-1))*Number(stuffList[i]["qty"]);
 						var t2=Number($("#quantity").html());
 						t2--;
 						$("#quantity").html(t2);
@@ -285,44 +286,65 @@ $(document).ready(function(){
 		});*/
 	$(".item .add-to-cart").on("click",function(){
 		var t=$(this).parent().parent();
-		var t1=Number($("#quantity").html());			
-		t1++;
-		$('<div class="loading"><div class="spin"></div><h1 class="l">Loading...</h1></div>').appendTo(t);
-		var temp=new stuff($(t).find("img").attr("src"),$(t).find(".name").html(),$(t).parent().parent().parent().find(".price").html());
-		stuffList.push(temp);
-		var l=stuffList.length;
-		$('<div class="product"><div class="order"></div><div class="pic"><img src=""/></div><div class="quantity"></div><div class="pname"></div><i class="fa fa-times" aria-hidden="true"></i></div>').appendTo("#cart-info");
-		var pd=$("#cart-info .product").last();
-		$(pd).find("i").click(function(){
-			var specify=$(this).parent().find("img").attr("src");
-			var money;
-			for(var i=0;i<stuffList.length;i++){
-				if(stuffList[i]["src"]==specify){
-					money=Number(stuffList[i]["price"].slice(0,stuffList[i]["price"].length-1));
-					var t2=Number($("#quantity").html());
-					t2--;
-					$("#quantity").html(t2);
-					stuffList.splice(i,1);
-					break;
-				}
+		var temp1=0;
+		var z=$(this).parent().parent().find("img").attr("src");
+		for(var i=0;i<stuffList.length;i++)
+		{
+			if(stuffList[i]["src"]==z)
+			{
+				var spec=$(".product")[i];
+				var more=Number($(spec).find(".quantity").html())+1;
+				console.log(more);
+				$(spec).find(".quantity").html(more);
+				price+=Number(stuffList[i]["price"].slice(0,stuffList[i]["price"].length-1));
+				price=Number(price.toFixed(2));
+				stuffList[i]["qty"]=more;
+				temp1=1;
+				break;
 			}
-			price-=money;
-			price=Number(price.toFixed(2));
-			$("#total").html(price);
-			$(this).parent().hide("fade",500,function(){
-				$(this).remove();
-				var sort=$(".product");
-				for(var i=1;i<=sort.length;i++){
-					$(sort[i-1]).find(".order").html(i);
+		}
+		$('<div class="loading"><div class="spin"></div><h1 class="l">Loading...</h1></div>').appendTo(t);
+		if(temp1==0)
+		{
+			var t1=Number($("#quantity").html());			
+			t1++;
+			var temp=new stuff($(t).find("img").attr("src"),$(t).find(".name").html(),$(t).parent().parent().parent().find(".price").html(),1);
+			stuffList.push(temp);
+			var l=stuffList.length;
+			$('<div class="product"><div class="order"></div><div class="pic"><img src=""/></div><div class="quantity"></div><div class="pname"></div><i class="fa fa-times" aria-hidden="true"></i></div>').appendTo("#cart-info");
+			var pd=$("#cart-info .product").last();
+			$(pd).find("i").click(function(){
+				var specify=$(this).parent().find("img").attr("src");
+				var money;
+				for(var i=0;i<stuffList.length;i++){
+					if(stuffList[i]["src"]==specify){
+						money=Number(stuffList[i]["price"].slice(0,stuffList[i]["price"].length-1))*Number($(pd).find(".quantity").html());
+						console.log(Number($(pd).find(".quantity").html()));
+						var t2=Number($("#quantity").html());
+						t2--;
+						$("#quantity").html(t2);
+						stuffList.splice(i,1);
+						break;
+					}
 				}
+				price-=money;
+				price=Number(price.toFixed(2));
+				$("#total").html(price);
+				$(this).parent().hide("fade",500,function(){
+					$(this).remove();
+					var sort=$(".product");
+					for(var i=1;i<=sort.length;i++){
+						$(sort[i-1]).find(".order").html(i);
+					}
+				});
 			});
-		});
-		$(pd).find(".order").html(l);
-		$(pd).find("img").attr("src",temp.src);
-		$(pd).find(".quantity").html(1);
-		$(pd).find(".pname").html(temp.name);
-		price+=Number(temp.price.slice(0,temp.price.length-1));
-		price=Number(price.toFixed(2));
+			$(pd).find(".order").html(l);
+			$(pd).find("img").attr("src",temp.src);
+			$(pd).find(".quantity").html(1);
+			$(pd).find(".pname").html(temp.name);
+			price+=Number(temp.price.slice(0,temp.price.length-1));
+			price=Number(price.toFixed(2));
+		}
 		$("#total").html(price);
 		var to1=setTimeout(function(){
 			$(t).find(".loading").remove();
