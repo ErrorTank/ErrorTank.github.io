@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="gamedeco.css"/>
+	<link rel="icon" type="image/png" href="icon.png"/>
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+</head>
+<body>
+	<div id="title-wrap">
+		<div id="name">
+			<a href="game.html" title="Game" target="_self">G<div>A</div>ME</a>
+		</div>
+	</div>
+	<div id="menu-wrap">
+		<button onmouseover="dropDown()" id="button">
+			Categories<br/>
+		</button>
+		<div id="option-menu">
+			<div><a href="#mm">Quiz!<div class="color"></div></a></div>
+			<div><a href="#q">Memory<br/>Card<div class="color"></div></a></div>
+		</div>
+	</div>
+	<div id="container">
+		<div id="q">
+			<div class="title">Quiz</div>
+			<div class="content">
+				<div class="img-contain">
+					<img src="quiz.jpg" alt="Quiz"/>
+						
+					<div class="text">
+					Take challenge<br/>with<br/>easy Quiz!
+					</div>
+				</div>
+				<div class="info-contain">
+					<div id="no1">
+						<ul class="intro">
+							<li style="font-size:50px;color:#62f442;">Game Introduce</li>
+							<li></li>
+							<li>Bring you some Quiz to answer</li>
+							<li>You have 10 seconds to solve each Quiz</li>
+							<li>Have Fun!</li>
+						</ul>
+					</div>
+					<button id="drag-but1" onclick="drag1()">
+						&#x025BC;
+					</button>
+					<a class="play" target="_self" href="quiz.html">
+						Play it!
+					</a>
+				</div>
+			</div>
+		</div>
+		<div id="mm">
+			<div class="title">Memory Card</div>
+			<div class="content">
+				<div class="img-contain">
+					<img src="card.jpg" alt="Card"/>
+						
+					<div class="text">
+						Test your<br/>memorize!
+					</div>
+				</div>
+				<div class="info-contain">
+					<div id="no2">
+						<ul class="intro">
+							<li style="font-size:50px;color:#62f442;">Game Introduce</li>
+							<li></li>
+							<li>Two game mode :Hard and Easy</li>
+							<li>Try to remember every card in a row</li>
+							<li>Have fun!</li>
+						</ul>
+					</div>
+					<button id="drag-but2" onclick="drag2()">
+						&#x025BC;
+					</button>
+					<a class="play" target="_blank" href="mm.html">
+						Play it!
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		var x=window.innerWidth;
+		var t1=document.getElementById("title-wrap");
+		var t2=document.getElementById("menu-wrap");
+		t1.style.width=x+"px";
+		t2.style.width=x+"px";
+	</script>
+	<script>
+		var but=document.getElementsByTagName("button");
+		var t4=but[0];
+		var newP=document.createElement("p");
+		newP.innerHTML="&dtrif;";
+		newP.setAttribute("id","spec");
+		t4.addEventListener("mouseover",function(){
+			t4.appendChild(newP);
+		});
+		t4.addEventListener("mouseout",function(){
+			var rm=document.getElementsByTagName("p")[0];
+			t4.removeChild(rm);
+		});
+	</script>
+	<script>
+	 		window.onscroll=function(){
+			if(scrollY>=100)
+			{
+				document.getElementById("menu-wrap").style.position="fixed";
+				document.getElementById("menu-wrap").style.top="0";
+			}
+			else{
+				document.getElementById("menu-wrap").style.top="100";
+				document.getElementById("menu-wrap").style.position="relative";
+			}
+		};
+	</script>
+	<script>
+		function dropDown(){
+			var t5=document.getElementById("option-menu");
+			t5.style.bottom="-160px";
+			t5.style.opacity="1";
+			t5.addEventListener("mouseover",function(){
+				t5.style.bottom="-160px";
+				t5.style.opacity="1";
+			});
+			t5.addEventListener("mouseout",function(){
+				t5.style.bottom="0";
+				t5.style.opacity="0";
+			});
+			t4.addEventListener("mouseout",function(){
+				t5.style.bottom="0";
+				t5.style.opacity="0";
+			});
+
+		}
+	</script>
+	<script>
+		function addEve(x,y){
+			x.addEventListener("mouseenter",function(){
+				y.style.animation="play-drop 0.5s ease";
+				x.innerText="";
+				x.appendChild(y);
+			});
+			x.addEventListener("mouseleave",function(){
+				x.innerText="Play it!";
+				x.removeChild(y);
+			});
+		}
+		var play=document.getElementsByClassName("play");
+		var newImg=document.createElement("img");
+		newImg.setAttribute("src","play-button.png");
+		for(var i=0;i<play.length;i++)
+		{
+			addEve(play[i],newImg);
+		}
+	</script>
+	<script>
+		var but1=document.getElementById("drag-but1");
+		var but2=document.getElementById("drag-but2");
+		var conte1=document.getElementById("no1");
+		var conte2=document.getElementById("no2");
+		function drag1(){
+			
+				if(conte1.id=="drag-con1"){
+					but1.innerHTML="&#x025BC;";
+					conte1.id="no1";
+				}
+				else
+				{
+					conte1.id="drag-con1";
+					but1.innerHTML="&#x025B2;";
+				}
+		}
+		function drag2(){
+			
+				if(conte2.id=="drag-con2"){
+					but2.innerHTML="&#x025BC;";
+					conte2.id="no2";
+				}
+				else
+				{
+					conte2.id="drag-con2";
+					but2.innerHTML="&#x025B2;";
+				}
+			}
+	</script>
+</body>
+</html>

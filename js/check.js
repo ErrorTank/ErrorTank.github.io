@@ -1,0 +1,1 @@
+document.getElementById("score1").innerHTML=sessionStorage.scoreCur;

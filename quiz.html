@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz Game</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="quiz.css"/>
+	<link rel="icon" type="image/png" href="icon.png"/>
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mogra" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div id="container">
+		<div id="title">Damn Quiz!</div>
+		<div id="time-contain">Time<br><div id="time"></div></div>
+		<div id="content">
+			<div>Score: <div id="score" style="display:inline">0</div>/5</div>
+			<div id="quiz"></div>
+			<div id="ans">
+				<button onclick="choose(this)">A. <h1 id="ans1"></h1></button>
+				<button onclick="choose(this)">B. <h1 id="ans2"></h1></button>
+				<button onclick="choose(this)">C. <h1 id="ans3"></h1></button>
+				<button onclick="choose(this)">D. <h1 id="ans4"></h1></button>
+			</div>
+			<div id="direct">
+				<button onclick="backward()" title="Back"><img src="back.png"/></button>
+				<button onclick="forward()" title="Next"><img src="next.png"/></button>
+			</div>
+		</div>
+	</div>
+	<div class="" id="damn">
+		<div>
+		</div>
+		<div id="circle">
+			<div id="spinner">
+			</div>
+		</div>
+		<h1>
+			Loading...
+		</h1>
+	</div>
+	
+	<script src="js/game.js"></script>
+</body>
+</html>

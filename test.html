@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM TEST</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="t.css"/>
+	<script src="js/bull.js"></script>
+	<style>
+		*{
+			box-sizing:border-box;
+		}
+		body,html{
+			margin:0;
+			padding:0;
+		}
+		.contain{
+			width:1000px;
+			height:auto;
+			margin:auto;
+			border:3px solid red;
+			border-radius:20px;
+		}
+		p:first-child{
+			margin:auto;
+			text-align:center;
+			font-size:50px;
+			margin-bottom:50px;
+			font-family:Helvetica;
+		}
+		.contain>p{
+			width:900px;
+			margin:auto;
+			height:auto;
+			text-align:justify;
+			font-size:20px;
+			margin-top:10px;
+			margin-bottom:10px;
+			text-indent:40px;
+			text-shadow:0px 2px 2px black;
+		}
+		img{
+			cursor:pointer;
+			width:500px;
+			float:left;
+		}
+	</style>
+</head>
+<body>
+	<p>DEMO DOM</p>
+	<div class="contain">
+		<p id="d1">
+			<img src="pic.png" title="Lacoste" alt="Lacoste"/>
+			ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი შეუშალოს. Lorem Ipsum-ის გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს, ვიდრე ერთიდაიგივე.
+		</p>
+		<p id="d2">
+			გავრცელებული მოსაზრებით, Lorem Ipsum შემთხვევითი ტექსტი სულაც არაა. მისი ფესვები ჯერკიდევ ჩვ. წ. აღ-მდე 45 წლის დროინდელი კლასიკური ლათინური ლიტერატურიდან მოდის. ვირჯინიის შტატში მდებარე ჰემპდენ-სიდნეის კოლეჯის პროფესორმა რიჩარდ მაკკლინტოკმა აიღო ერთ-ერთი ყველაზე იშვიათი ლათინური სიტყვა "consectetur" Lorem Ipsum-პასაჟიდან 
+		</p>
+		<p id="d3">
+			და გადაწყვიტა მოეძებნა იგი კლასიკურ ლიტერატურაში. ძიება შედეგიანი აღმოჩნდა — ტექსტი Lorem Ipsum გადმოწერილი ყოფილა ციცერონის "de Finibus Bonorum et Malorum"-ის 1.10.32 და 1.10.33 თავებიდან. ეს წიგნი ეთიკის თეორიის ტრაქტატია, რომელიც რენესანსის პერიოდში ძალიან იყო გავრცელებული. Lorem Ipsum-ის პირველი ხაზი, "Lorem ipsum dolor sit amet..." სწორედ ამ წიგნის 1.10.32 თავიდანაა.
+		</p>
+	</div>
+</body>
+</html>

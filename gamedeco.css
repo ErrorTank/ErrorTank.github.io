@@ -1,0 +1,370 @@
+*{
+	box-sizing:border-box;	
+}
+body{
+	margin:0;
+	padding:0;
+	height:1500px;
+}
+html{
+	background:url("oki.jpg") no-repeat center fixed;
+	background-size:cover;
+}
+#title-wrap{
+	position:relative;
+	top:0;
+	background-color:white;
+	height:100px;
+}
+#menu-wrap{
+	background-color:white;
+	position:relative;
+	z-index:2;
+	height:50px;
+}
+#name{
+	margin:auto;
+	width:200px;
+	height:auto;
+	font-family:'Ubuntu', sans-serif;
+	font-size:70px;
+	text-align:center;
+	transition:all 0.5s ease;
+	border-top:5px solid orange;
+}
+#name>a{
+	padding:0;
+	text-decoration:none;
+	color:black;
+	display:block;
+	margin:0;
+}
+#name>a>div{
+	font-size:100px;
+	color:orange;
+	padding:0;
+	margin:0;
+	display:inline;
+}
+#menu-wrap #button{
+	margin:auto;
+	text-align:center;
+	line-height:22px;
+	font-size:25px;
+	width:200px;
+	display:block;
+	bottom:0;
+	position:absolute;
+	cursor:pointer;
+	transition:all 0.5s ease;
+	height:45px;
+	color:orange;
+	font-weight:bold;
+	border:none;
+	right:50%;
+	transform:translateX(50%);
+	background-color:white;
+	z-index:2;
+}
+#menu-wrap #button:hover{
+	border:2px solid orange;
+	background-color:black;
+	color:orange;
+}
+#menu-wrap #button> #spec{
+	font-size:60px;
+	padding:0;
+	margin:0;
+	font-weight:bold;
+	position:absolute;
+	left:75px;
+	transition:all 0.5s ease;
+	bottom:-5px;
+	z-index:2;
+	animation:drop 0.3s ease forwards;
+}
+@keyframes drop{
+	from{
+		transform:translateY(50px);
+		opacity:0;
+	}
+	to{
+		transform:translateY(25px);
+		opacity:1;
+	}
+}
+#option-menu{
+	position:absolute;
+	width:500px;
+	background-color:white;
+	border:2px solid orange;
+	left:50%;
+	transform:translateX(-50%);
+	transition:all 0.5s ease;
+	top:55px;
+	z-index:1;
+	bottom:0;
+	overflow:hidden;
+	opacity:0;
+}
+#option-menu>div{
+	text-align:center;
+	font-family:'Ubuntu', sans-serif;
+	transition:all 0.5s ease;
+	width:248px;
+	height:100%;
+	background-color:white;
+	float:left;
+	padding-top:30px;
+	cursor:pointer;
+	font-size:30px;
+}
+#option-menu a{
+	text-decoration:none;
+	color:black;
+	font-weight:bold;
+}
+.color{
+	width:250px;
+	height:20px;
+	position:absolute;
+	background-color:orange;
+	bottom:0;
+	transition:all 0.5s ease;
+}
+#option-menu>div:hover{
+	box-shadow:0px 10px 10px 0px black;
+	transform:translateY(-5px);
+}
+#option-menu>div:hover div{
+	background-color:red;
+}
+#container{
+	width:1200px;
+	margin:auto;
+	margin-top:150px;
+	background-color:white;
+	height:1000px;
+	padding-top:50px;
+	z-index:0;
+}
+#container>div{
+	width:1000px;
+	height:400px;
+	margin:auto;
+	background-color:white;
+	margin-top:50px;
+	position:relative;
+}
+.title{
+	top:0;
+	left:0;
+	width:200px;
+	height:50px;
+	background-color:#c8cbd1;
+	color:orange;
+	font-size:25px;
+	text-align:center;
+	font-family:'Ubuntu', sans-serif;
+	font-weight:bold;
+	cursor:pointer;
+	transition:all 0.2s linear;
+	padding-top:10px;
+}
+.title:hover{
+	border-top:3px solid orange;
+	color:red;
+}
+.content{
+	left:0;
+	width:1000px;
+	border:5px solid orange;
+	height:350px;
+}
+.img-contain{
+	width:300px;
+	height:341px;
+	overflow:hidden;
+	position:relative;
+	float:left;
+	background-color:black;
+}
+.img-contain>img{
+	height:341px;
+	position:absolute;
+	z-index:0;
+	transition:all 0.5s ease;
+	opacity:0.3;
+}
+.text{
+	position:absolute;
+	bottom:0;
+	transition:all 0.5s ease;
+	width:300px;
+	height:0px;
+	overflow:hidden;
+	text-align:center;
+	padding-top:0;
+	font-family:'Ubuntu', sans-serif;
+	color:orange;
+	font-size:40px;
+	font-weight:bold;
+	height:250px;
+	line-height:60px;
+}
+.img-contain:hover img{
+
+}
+.img-contain:hover .text{
+
+}
+.info-contain{
+	position:relative;
+	width:690px;
+	height:341px;
+	display:inline-block;
+}
+.play{
+	width:180px;
+	height:50px;
+	background-color:black;
+	position:absolute;
+	font-family:'Ubuntu', sans-serif;
+	text-decoration:none;
+	color:white;
+	transition:all 0.5s ease;
+	font-size:35px;
+	left:255px;
+	overflow:hidden;
+	border:2px solid orange;
+	text-align:center;
+	bottom:30px;
+}
+.play:hover{
+	color:black;
+	background-color:white;
+}
+.play>img{
+	position:absolute;
+	transition:all 0.5s ease;
+	width:60px;
+	top:-5px;
+	left:60px;
+}
+@keyframes play-drop{
+	from{
+		opacity:0;
+		transform:translateY(-30px);
+	}
+	to{
+		opacity:1;
+		transform:translateY(0);
+	}
+}
+@keyframes play-dis{
+	from{
+		opacity:1;
+		transform:translateX(0);
+	}
+	to{
+		opacity:0;
+		transform:translateX(30px);
+	}
+}
+#drag-but1{
+	width:200px;
+	height:50px;
+	display:block;
+	background-color:orange;
+	margin:auto;
+	color:white;
+	cursor:pointer;
+	transition:all 0.3s ease;
+	text-align:center;
+	z-index:3;
+	border:none;
+	font-size:40px;
+}
+#drag-but1:hover{
+	color:black;
+}
+#drag-but2{
+	width:200px;
+	border:none;
+	height:50px;
+	display:block;
+	background-color:orange;
+	margin:auto;
+	color:white;
+	cursor:pointer;
+	transition:all 0.3s ease;
+	text-align:center;
+	z-index:3;
+	font-size:40px;
+}
+#drag-but2:hover{
+	color:black;
+}
+#no1{
+	overflow:hidden;
+	margin:0 auto;
+	color:black;
+	color:orange;
+	width:600px;
+	transition:all 0.5s ease;
+	height:0px;
+	font-size:20px;
+	padding-left:10px;
+	padding-right:10px;
+	text-align:center;
+	font-family:'Ubuntu', sans-serif;
+}
+#no2{
+	overflow:hidden;
+	margin:0 auto;
+	color:black;
+	width:600px;
+	transition:all 0.5s ease;
+	height:0px;
+	font-size:20px;
+	padding-left:10px;
+	color:orange;
+	padding-right:10px;
+	text-align:center;
+	font-family:'Ubuntu', sans-serif;
+}
+.info-contain>div#drag-con1{
+	overflow:hidden;
+	margin:0 auto;
+	color:black;
+	padding-left:10px;
+	padding-right:10px;
+	width:600px;
+	color:orange;
+	transition:all 0.5s ease;
+	font-size:20px;
+	text-align:center;
+	font-family:'Ubuntu', sans-serif;
+	height:340px;
+}
+.info-contain>div#drag-con2{
+	overflow:hidden;
+	margin:0 auto;
+	color:black;
+	width:600px;
+	transition:all 0.5s ease;
+	font-size:20px;
+	color:orange;
+	padding-left:10px;
+	padding-right:10px;
+	text-align:center;
+	font-family:'Ubuntu', sans-serif;
+	height:340px;
+}
+.intro{
+	padding:0;
+	margin:0;
+	font-size:30px;
+	text-align:center;
+	line-height:50px;
+}
