@@ -265,7 +265,7 @@ $(document).ready(function(){
 			time=100;
 		}
 		else{
-			time=50;
+			time=30;
 		}
 		$(p).attr("max",time);
 		$(p).attr("value",time);
