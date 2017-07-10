@@ -10,6 +10,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
+	<progress value="" max="">
+		
+	</progress>
 	<audio id="bgaudio">
 		<source src="bgmusic.mp3" type="audio/mpeg">
 	</audio>
@@ -37,6 +40,36 @@
 	<audio id="waudio">
 		<source src="sd.mp3" type="audio/mpeg">
 	</audio>
+	<audio id="win">
+		<source src="Victory.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="lose">
+		<source src="Defeat.mp3" type="audio/mpeg">
+	</audio>
+	<div class="noti-window-wrap">
+		<div id="win-window" class="noti-window">
+			<img src="img/victory.png"/ style="width:1000px;">
+			<div class="rq-wrap">
+				<div class="replay">
+					Play Again
+				</div>
+				<div class="quit">
+					Quit
+				</div>
+			</div>
+		</div>
+		<div id="lose-window" class="noti-window">
+			<img src="img/defeat.png"/ style="width:600px; margin-top:-20px;">
+			<div class="rq-wrap">
+				<div class="replay">
+					Play Again
+				</div>
+				<div class="quit">
+					Quit
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="greet">
 		<div id="loading">
 			<ul id="dotted-wrap">

@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	function playBGMusic(bool){
 		var temp=$("#bgaudio");
+		temp[0].volume=0.5;
 		temp[0].loop=true;
 		if(bool){
 			temp[0].play();
@@ -18,7 +19,7 @@ $(document).ready(function(){
 				var to=setTimeout(function(){
 					temp.load();
 					clearTimeout(to);
-				},2000);
+				},2500);
 				break;
 			}
 			case 2:
@@ -28,7 +29,7 @@ $(document).ready(function(){
 				var to=setTimeout(function(){
 					temp.load();
 					clearTimeout(to);
-				},2000);
+				},2500);
 				break;
 			}
 			case 3:
@@ -38,7 +39,7 @@ $(document).ready(function(){
 				var to=setTimeout(function(){
 					temp.load();
 					clearTimeout(to);
-				},2000);
+				},2500);
 				break;
 			}
 			case 4:
@@ -48,7 +49,7 @@ $(document).ready(function(){
 				var to=setTimeout(function(){
 					temp.load();
 					clearTimeout(to);
-				},2000);
+				},2500);
 				break;
 			}
 			case 5:
@@ -58,7 +59,7 @@ $(document).ready(function(){
 				var to=setTimeout(function(){
 					temp.load();
 					clearTimeout(to);
-				},2000);
+				},2500);
 				break;
 			}
 			case 6:
@@ -68,7 +69,7 @@ $(document).ready(function(){
 				var to=setTimeout(function(){
 					temp.load();
 					clearTimeout(to);
-				},2000);
+				},2500);
 				break;
 			}
 			case 7:
@@ -78,7 +79,7 @@ $(document).ready(function(){
 				var to=setTimeout(function(){
 					temp.load();
 					clearTimeout(to);
-				},2000);
+				},2500);
 				break;
 			}
 			case 8:
@@ -88,7 +89,7 @@ $(document).ready(function(){
 				var to=setTimeout(function(){
 					temp.load();
 					clearTimeout(to);
-				},2000);
+				},2500);
 				break;
 			}
 			case 9:
@@ -98,7 +99,7 @@ $(document).ready(function(){
 				var to=setTimeout(function(){
 					temp.load();
 					clearTimeout(to);
-				},2000);
+				},2500);
 				break;
 			}
 		}
@@ -109,7 +110,7 @@ $(document).ready(function(){
 		var to=setTimeout(function(){
 			temp[0].load();
 			clearTimeout(to);
-		},1400);
+		},1700);
 	}
 	var cardArr=["img/ahri.jpg","img/hec.jpg","img/j4.jpg","img/kz.jpg","img/lulu.jpg","img/noc.jpg","img/rek.jpg","img/thresh.jpg","img/viktor.jpg"];
 	cardArr=cardArr.concat(cardArr);
@@ -171,6 +172,7 @@ $(document).ready(function(){
 						$("#greet").hide("fade",500);
 						playBGMusic(true);
 						clearTimeout(to);
+						gameStart($(choosen).attr("id"));
 					},2000)
 				});
 			}});
@@ -191,6 +193,7 @@ $(document).ready(function(){
 	}
 	pickGameMode();
 	var rightCount=0;
+	var remain=9;
 	function clickCard(){
 		var one,two;
 		var clickCount=0;
@@ -213,13 +216,14 @@ $(document).ready(function(){
 				clickCount=0;
 				var to=setTimeout(function(){
 					if($(one).find(".front>img").attr("src")===$(two).find(".front>img").attr("src")){
+						remain--;
 						rightCount++;
 						destroyCard(true,rightCount);
 						$(one).find(".front").hide("explode",500,function(){
-							$(this).parent().find(".back").css("display","none")
+							$(this).parent().find(".back").css("display","none");
 						});
 						$(two).find(".front").hide("explode",500,function(){
-							$(this).parent().find(".back").css("display","none")
+							$(this).parent().find(".back").css("display","none");
 						});
 						$(one).css("pointer-events","none");
 						$(two).css("pointer-events","none");
@@ -232,10 +236,63 @@ $(document).ready(function(){
 						$(".up").removeClass("up");
 						$(this).find(".front").css("box-shadow","");
 					}
+					if(remain==0){
+						Win();
+					}
 					clickCard();
 				},1200);
 			}
 		});
 	}
 	clickCard();
+	function gameOverNoti(){
+		$(".rq-wrap>div").on("click",function(){
+			if($(this).hasClass('replay')){
+				location.reload();
+			}
+			else if($(this).hasClass('quit')){
+				window.close();
+			}
+		});
+	}
+	gameOverNoti();
+	var it;
+	function gameStart(gameMode){
+		var time;
+		var p=$("progress");
+		$(p).css("display","block");
+		if(gameMode==="easy"){
+			time=100;
+		}
+		else{
+			time=50;
+		}
+		$(p).attr("max",time);
+		$(p).attr("value",time);
+		it=setInterval(function(){
+			time--;
+			$(p).attr("value",time);
+			if(time===0){
+				Lose();
+			}
+		},1000);
+	}
+	function Win(){
+		clearInterval(it);
+		playBGMusic(false);
+		$(".noti-window-wrap").show("fade",500,function(){
+			$("#win-window").show("fade",300);
+			var temp=$("#win");
+			temp[0].play();
+		});
+	}
+	function Lose(){
+		clearInterval(it);
+		playBGMusic(false);
+		$(".noti-window-wrap").show("fade",500,function(){
+			$("#lose-window").show("fade",300);
+			var temp=$("#lose");
+			temp[0].play();
+		});
+	}
 });

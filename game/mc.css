@@ -22,7 +22,6 @@ html,body{
 	transition: all 0.5s ease;
 	height: 100%;
 	z-index: 5;
-	/*display: none;*/
 }
 #pick{
 	position: absolute;
@@ -206,4 +205,101 @@ html,body{
 }
 .front>img{
 	width: 150px;
+}
+.noti-window-wrap{
+	position: fixed;
+	width:100%;
+	height:100%;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 1;
+	transition: all 1s ease;
+	display: none;
+}
+.noti-window{
+	width: 1000px;
+	height:800px;
+	margin:auto;
+	text-align: center;	
+}
+#lose-window{
+	display: none;
+}
+#win-window{
+	display: none;
+}
+.rq-wrap{
+	position: absolute;
+	left:50%;
+	transform: translateX(-50%);
+	bottom:50px;
+	z-index: 2;
+	width: 1000px;
+	display:flex;
+	justify-content: space-between;
+	height: 100px;
+	padding-left:150px;
+	padding-right:150px;
+}
+.rq-wrap>div{
+	height: 80px;
+	flex-grow: 0.4;
+	background-color: #1a1a1a;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 30px;
+	font-size: 35px;
+	font-weight: bold;
+	color:white;
+	font-family:  'Ubuntu', sans-serif;
+	padding-top: 18px;
+	max-width: 280px;
+	min-width: 280px;
+	overflow: hidden;
+	letter-spacing: 3px;
+	transition: all 0.2s ease;
+	position: relative;
+}
+.rq-wrap>div::after{
+	content: "";
+	width: 280px;
+	position: absolute;
+	height: 0;
+	background-color:orangered;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%) rotateZ(-25deg);
+	z-index: -1;
+	transition: all 0.2s linear;
+}
+.rq-wrap>div:hover::after{
+	height: 180px;
+}
+.rq-wrap>div:hover{
+	box-shadow: 0px 2px 5px 0px white;
+}
+.rq-wrap>div:active{
+	box-shadow: 0px 0px 0px 0px white;
+}
+progress{
+	width: 1000px;
+	height: 30px;
+	position: absolute;
+	top:30px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: none;
+	transition: all 0.3s linear;
+	-webkit-appearance:none;
+}
+::-webkit-progress-inner-element{
+	border:2px solid white;
+	border-radius: 10px;
+}
+::-webkit-progress-bar{
+	background-color: #1a1a1a;
+	border-radius: 10px;
+}
+::-webkit-progress-value{
+	border-radius: 10px;
+	background-color: orangered;
 }
