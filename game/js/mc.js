@@ -259,6 +259,7 @@ $(document).ready(function(){
 	var it;
 	function gameStart(gameMode){
 		var time;
+		$(".switch-wrap").css("display","block");
 		var p=$("progress");
 		$(p).css("display","block");
 		if(gameMode==="easy"){
@@ -295,4 +296,21 @@ $(document).ready(function(){
 			temp[0].play();
 		});
 	}
+	function mute(){
+		$("#toggleBGMusic>label").on("click",function(){
+			$(this).toggleClass('mute');
+			var temp=$("audio");
+			if($(this).hasClass("mute")){
+				for(var i=0;i<temp.length;i++){
+					temp[i].muted=true;
+				}
+			}
+			else{
+				for(var i=0;i<temp.length;i++){
+					temp[i].muted=false;
+				}
+			}
+		});
+	}
+	mute();
 });

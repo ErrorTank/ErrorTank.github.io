@@ -303,3 +303,47 @@ progress{
 	border-radius: 10px;
 	background-color: orangered;
 }
+.switch-wrap{
+	position: absolute;
+	z-index: 1;
+	bottom:60px;
+	right:100px;
+	display: none;
+}
+.switch{
+	position:relative;
+}
+.switch>label{
+	width: 80px;
+	height: 40px;
+	background-color: orangered;
+	border:3px solid orangered;
+	position: absolute;
+	border-radius: 30px;
+	top:0;
+	cursor: pointer;
+	left:0;
+	transition: all 0.3s ease;
+}
+.switch>input[type="checkbox"]{
+	visibility: hidden;
+}
+.switch>label:after{
+	content: "";
+	transition: all 0.3s ease;
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	background-color: white;
+	top:1px;
+	right:1px;
+	border-radius: 50%;
+}
+.switch>input[type="checkbox"]:checked + label:after{
+	right:41px;
+}
+.switch>input[type="checkbox"]:checked + label{
+	right:41px;
+	background-color: #1a1a1a;
+	border:3px solid #1a1a1a;
+}
